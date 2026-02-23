@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./backToTop.css";
+import "./BackToTop.css";
 export default function BackToTop() {
   const [show, setShow] = useState(false);
 
