@@ -1,0 +1,136 @@
+/* ...existing code... */
+.calendar {
+  /* brighter school-friendly background, larger and responsive */
+  background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+  color: var(--foreground);
+  border-radius: 10px;
+  padding: 20px;
+  /* width: min(960px, 96%); */
+  /* max-width: 1100px; */
+  margin: 10px;
+  box-shadow: 0 6px 18px rgba(20,40,80,0.08);
+  font-family: inherit;
+}
+
+.calendar h2 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.calendar-now {
+  font-size: 0.95rem;
+  color: #42526a;
+  margin-bottom: 14px;
+}
+
+.events-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.event {
+  padding: 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(20,40,80,0.04);
+}
+
+.event.upcoming {
+  border-left: 6px solid #2A6FBD;
+}
+
+.event.past {
+  opacity: 0.75;
+  border-left: 6px solid #999;
+  background: rgba(245,245,245,0.9);
+}
+
+.event-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.event-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.event-date {
+  font-size: 0.95rem;
+  color: #394a59;
+}
+
+/* big, clear countdown */
+.event-meta {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.count-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+}
+
+.count-num {
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 6px 10px;
+  background: linear-gradient(180deg, rgba(42,111,189,0.12), rgba(42,111,189,0.06));
+  color: #0b3a73;
+  border-radius: 6px;
+  font-weight: 800;
+  min-width: 48px;
+  text-align: center;
+}
+
+.count-label {
+  font-size: 0.75rem;
+  color: #2d4a66;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.count-sep {
+  font-size: 1.2rem;
+  color: #2d4a66;
+  font-weight: 800;
+}
+
+/* smaller screens: ensure layout fits */
+@media (max-width: 520px) {
+  .calendar {
+    padding: 14px;
+  }
+  .count-num {
+    font-size: 1.25rem;
+    min-width: 40px;
+  }
+  .count-item {
+    min-width: 48px;
+  }
+}
+
+.event-desc {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #2f4b62;
+}
+/* ...existing code... */

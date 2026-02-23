@@ -1,0 +1,94 @@
+.contact-container {
+  background-color: white;
+  padding: 60px 40px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+  color: black;
+}
+
+.colortext {
+  color: #FFD700;
+}
+
+/* FLEX */
+.contact-flex {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* RED CARD */
+.contact1 {
+  background-color: #B71C1C;
+  padding: 40px;
+  width: 300px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* WHATSAPP CARD (WHITE WITH RED BORDER) */
+.contact2 {
+  background-color: white;
+  padding: 40px;
+  width: 300px;
+  border-radius: 15px;
+  border: 3px solid #B71C1C;
+  color: #B71C1C;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* RED BUTTON */
+.btn-red {
+  background-color: white;
+  color: #B71C1C;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-red:hover {
+  background-color: #FFD700;
+  color: black;
+}
+
+/* WHITE BUTTON FOR WHATSAPP */
+.btn-white {
+  background-color: #B71C1C;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-white:hover {
+  background-color: black;
+}
+.contact3{
+   
+  width: 300px;
+ 
+  background: linear-gradient(135deg, #FFD700, #FFC107);
+  color: black;
+  padding: 60px 40px;
+  border-radius: 15px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+}
+.btn-brchhure {
+       background-color: #4E342E;
+  color: #fff;
+  border: none ;
+  padding: 12px 25px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+} 

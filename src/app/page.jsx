@@ -1,0 +1,82 @@
+import styles from "./page.module.css";
+import localFont from "next/font/local";
+import About from "./components/about";
+import Learn from "./components/learnwithus";
+import ContactUs from "./components/contactus";
+import Journey from "./components/journey";
+import Calendar from "./components/calendar";
+import Testimonials from "./components/testimonials";
+import Join from "./components/join";
+import Footer from "./components/Footer";
+
+export const metadata = {
+  title: "Delben Schools | HomePage",
+  description: "Welcome to Delben Schools. We provide quality education from Kindergarten to Secondary School. Join us today!",
+  openGraph: {
+    title: "Delben Schools | Home",
+    description: "Join Delben Schools and experience excellence in education.",
+    url: "https://delbenschools.org",
+    siteName: "Delben Schools",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Delben Schools | Home",
+    description: "Providing quality education for all students.",
+    images: ["/logo.png"],
+  },
+};
+
+// Font import from public folder
+const delbenFont = localFont({
+  src: "/FjallaOne-Regular.ttf", // relative to public folder
+  weight: "400",
+  style: "normal",
+  variable: "--delben-font",
+});
+
+export default function HomePage() {
+  return (
+    <>
+    <div className="">
+      {/* Navbar */}
+      {/* <Navbar /> */}
+
+      {/* White container */}
+      <div className={styles.container}>
+        <div className={styles.page}>
+          {/* Apply the font using className */}
+          <div className={styles.transparent}>
+          <h3>Bringing Talent To Life</h3>
+          </div>
+           
+        </div>
+       <div className={styles.nametext}>
+        <h1 className={delbenFont.className} >DELBEN <br /> SCHOOLS</h1>
+        
+        </div>
+        <div className={styles.btn}>
+          <button className={styles.enquire}>Enquire Now</button>
+          <button className={styles.about} >About Us</button>
+        </div>
+      </div>
+    </div>
+    <About />
+    <Learn />
+    <ContactUs />
+    <Journey />
+    <Calendar />
+    <Testimonials />
+    <Join />
+    <Footer />
+    </>
+  );
+}

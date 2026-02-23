@@ -1,0 +1,99 @@
+.testimonials {
+  background: #ffffff;
+  padding: 36px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-card {
+  position: relative;
+  background: #ffffff;
+  max-width: 920px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 36px 36px 28px 36px;
+  box-shadow: 0 8px 24px rgba(16, 40, 80, 0.06);
+  border: 1px solid rgba(20, 40, 80, 0.04);
+  overflow: visible;
+}
+
+/* large decorative quote symbol */
+.quote-mark {
+  position: absolute;
+  top: -6px;
+  left: 18px;
+  font-size: 96px;
+  line-height: 1;
+  color: rgba(42, 111, 189, 0.10);
+  font-weight: 800;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* quote text */
+.quote-text {
+  margin: 4px 0 18px 0;
+  font-size: 1.125rem;
+  color: #1f2d3d;
+  line-height: 1.6;
+  letter-spacing: 0.1px;
+  padding-right: 12px;
+}
+
+/* author row: photo + name stacked to the right of the image */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* circular photo */
+.author-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(42,111,189,0.12);
+  background: #f0f6ff;
+}
+
+/* name and relation stacked */
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 700;
+  color: #0b3a73;
+  font-size: 1rem;
+}
+
+.author-relation {
+  font-size: 0.9rem;
+  color: #5b6b7a;
+  margin-top: 4px;
+}
+
+/* responsive: smaller screens stack quote and shrink sizes slightly */
+@media (max-width: 560px) {
+  .testimonial-card {
+    padding: 18px;
+  }
+
+  .quote-mark {
+    font-size: 72px;
+    left: 12px;
+    top: -10px;
+  }
+
+  .author-photo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+}

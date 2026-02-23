@@ -1,0 +1,34 @@
+.scrollTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #0070f3;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 0 rgba(0, 112, 243, 0.7);
+  animation: pulse 1.5s infinite;
+  transition: 0.3s;
+}
+
+.scrollTop:hover {
+  transform: scale(1.1);
+}
+
+/* vibrating pulse circle */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(0, 112, 243, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0);
+  }
+}
