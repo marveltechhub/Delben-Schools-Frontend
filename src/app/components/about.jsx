@@ -17,7 +17,7 @@ export default function About() {
           {/* Image Section */}
           <div className="about-image">
             <Image
-              src="/student.jpeg"   // put your image in public
+              src="/logo.png"   // put your image in public
               alt="Delben School"
               width={190}
               height={200}
