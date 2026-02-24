@@ -1,7 +1,7 @@
 .nav-container {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   position: relative;
   z-index: 1000;
 }
@@ -11,8 +11,8 @@
   align-items: center;
   justify-content: space-between;
   background-color: #FFD700;
-  width: 90%;
-  border-radius: 50px;
+  width: 100%;
+  /* border-radius: 50px; */
   height: 60px;
   padding: 0 25px;
 }
