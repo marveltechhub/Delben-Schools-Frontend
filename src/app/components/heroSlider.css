@@ -1,0 +1,136 @@
+/* Hero slider - full-width background images with overlay text (responsive) */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  /* responsive height: not too small on phones, not too tall on desktop */
+  height: clamp(320px, 58vh, 760px);
+  overflow: hidden;
+  background: #111;
+}
+
+/* slides (background images) */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;           /* ensure image fills container */
+  background-position: center center; /* keep important part visible */
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 900ms ease, transform 900ms ease;
+  will-change: opacity, transform;
+}
+
+/* subtle gradient overlay per slide to improve text contrast */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06) 30%, rgba(0,0,0,0.36) 100%);
+  pointer-events: none;
+  mix-blend-mode: normal;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 0;
+}
+
+/* overlay content centered above slides */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px;
+  color: #fff;
+  z-index: 2; /* keep above slide overlay */
+}
+
+/* logo */
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.5));
+}
+
+/* main title */
+.hero-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(28px, 6vw, 64px);
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  line-height: 1;
+}
+
+/* changing caption below */
+.hero-caption {
+  margin-top: 10px;
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: rgba(255,255,255,0.95);
+  max-width: 900px;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+/* dots */
+.hero-controls {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.45);
+  border: none;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease;
+}
+.dot.active {
+  background: linear-gradient(180deg,#ff8a8a,#ff5b5b);
+  transform: scale(1.2);
+}
+
+/* Large screens: ensure images keep center and show well */
+@media (min-width: 1200px) {
+  .slide { background-position: center center; }
+  .hero-overlay { padding: 36px; }
+  .hero-logo { width: 80px; height: 80px; }
+  .hero-title { font-size: clamp(36px, 5vw, 72px); }
+}
+
+/* Tablet / small laptop */
+@media (max-width: 900px) {
+  .hero-slider { height: clamp(300px, 50vh, 520px); }
+  .hero-caption { font-size: 16px; padding: 0 12px; }
+}
+
+/* Mobile: prefer top-focused framing and smaller height */
+@media (max-width: 720px) {
+  .hero-slider { height: clamp(220px, 42vh, 420px); }
+  .slide { background-position: center top; } /* show top of image where faces often are */
+  .hero-logo { width: 52px; height: 52px; }
+  .hero-title { font-size: clamp(20px, 9vw, 36px); }
+  .hero-caption { font-size: 13px; padding: 0 10px; }
+  .dot { width: 10px; height: 10px; }
+}
+
+/* ensure text remains readable if image loads slowly */
+.hero-overlay,
+.hero-caption,
+.hero-title {
+  text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}

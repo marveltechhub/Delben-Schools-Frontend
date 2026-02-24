@@ -17,23 +17,23 @@ export default function About() {
           {/* Image Section */}
           <div className="about-image">
             <Image
-              src="/about.png"   // put your image in public
+              src="/student.jpeg"   // put your image in public
               alt="Delben School"
-              width={500}
-              height={400}
+              width={190}
+              height={200}
             />
           </div>
 
           {/* Text Section */}
           <div className="about-content">
             <h3>
-              WELCOME TO <br /> S C H O O L S
+              WELCOME TO 
             </h3>
 
             <span className={`${delbenFont.className} textcolor`}>
-              DELBEN
+              DELBEN 
             </span>
-
+                <h3 style={{marginTop:-20}}> S C H O O L S</h3>
             <p className="abouttext">
               Delben Schools is a center of excellence committed to nurturing 
               young minds and building future leaders. We provide a balanced 

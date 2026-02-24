@@ -22,7 +22,7 @@ export default function Learn() {
 
       <div className="flexcontainer">
         <div className="imagetext1">
-          <Image src="/class.jpg" alt="Delben School" fill />
+          <Image src="/student.jpeg" alt="Delben School" fill />
           <p>Smart Learning</p>
         </div>
 
@@ -32,12 +32,12 @@ export default function Learn() {
         </div>
 
         <div className="imagetext1">
-          <Image src="/student.jpg" alt="Delben School" fill />
+          <Image src="/student1.jpeg" alt="Delben School" fill />
           <p>Student Success</p>
         </div>
 
         <div className="imagetext1">
-          <Image src="/group.png" alt="Delben School" fill />
+          <Image src="/student3.jpeg" alt="Delben School" fill />
           <p>Team Learning</p>
         </div>
       </div>
