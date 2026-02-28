@@ -1,0 +1,187 @@
+/* Form wrapper */
+.admission-form-wrap {
+  max-width: 920px;
+  margin: 18px auto;
+  padding: 12px;
+  box-sizing: border-box;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* visible form */
+.admission-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(16,40,80,0.06);
+  display: grid;
+  gap: 12px;
+  border: 1px solid rgba(15,35,65,0.04);
+}
+
+.admission-form h3 {
+  margin: 0 0 4px;
+  color: #0b3a73;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.admission-form .row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admission-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #334155;
+  flex: 1 1 220px;
+}
+
+.admission-form input,
+.admission-form textarea {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(20,40,80,0.08);
+  font-size: 0.95rem;
+  color: #0b1730;
+  background: #fbfdff;
+  box-sizing: border-box;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+.admission-form input:focus,
+.admission-form textarea:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(42,111,189,0.12);
+  transform: translateY(-1px);
+}
+
+/* actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+.submit-btn {
+  background: linear-gradient(180deg,#ff7b7b,#ff4747);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(255,71,71,0.14);
+}
+.submit-btn:disabled { opacity: 0.7; cursor: wait; }
+
+/* printable PDF card (styled to render nicely in PDF) */
+.printable .pdf-card {
+  width: 800px;
+  padding: 22px;
+  background: #ffffff;
+  color: #0b1730;
+  font-family: "Times New Roman", Georgia, serif;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* header */
+.pdf-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.pdf-header img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
+  padding: 6px;
+  border: 1px solid rgba(15,35,65,0.03);
+}
+.pdf-title h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #0b3a73;
+  font-weight: 900;
+}
+.pdf-title div { font-size: 12px; color: #334155; margin-top: 4px; }
+
+/* body */
+.pdf-body { margin-top: 14px; display: grid; gap: 10px; }
+.field { display:flex; gap: 8px; align-items: baseline; }
+.field .label { width: 170px; font-weight: 800; color: #0b3a73; }
+.field span:last-child { color: #1a2430; }
+
+/* full width fields */
+.field.full { align-items: flex-start; }
+
+/* footer */
+.pdf-footer { margin-top: 14px; color: #5b6b7a; font-size: 11px; text-align: right; }
+
+/* responsiveness */
+@media (max-width: 720px) {
+  /* reduce outer margins so component doesn't look sparse on phones */
+  .admission-form-wrap {
+    margin: 10px auto;
+    padding: 8px;
+  }
+
+  /* compact the visible form */
+  .admission-form {
+    padding: 12px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .admission-form h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .admission-form .row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admission-form label {
+    font-size: 0.92rem;
+    flex: 1 1 auto;
+  }
+
+  .admission-form input,
+  .admission-form textarea {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .form-actions {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* printable PDF card smaller for mobile preview (no extra whitespace) */
+  .printable .pdf-card {
+    width: 320px;
+    padding: 12px;
+  }
+
+  .field .label {
+    width: 120px;
+    font-size: 13px;
+  }
+
+  .pdf-header img {
+    width: 56px;
+    height: 56px;
+  }
+}

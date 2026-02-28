@@ -9,6 +9,7 @@ import Testimonials from "./components/testimonials";
 import Join from "./components/join";
 import Footer from "./components/Footer";
 import HeroSlider from "./components/HeroSlider";
+import WelcomeModal from "./components/WelcomeModal";
 
 export const metadata = {
   title: "Delben Schools | HomePage",
@@ -47,15 +48,16 @@ const delbenFont = localFont({
 export default function HomePage() {
   return (
     <>
-  <HeroSlider />
-    <About />
-    <Learn />
-    <ContactUs />
-    <Journey />
-    <Calendar />
-    <Testimonials />
-    <Join />
-    <Footer />
+      <HeroSlider />
+      <WelcomeModal />
+      <About />
+      <Learn />
+      <ContactUs />
+      <Journey />
+      <Calendar />
+      <Testimonials />
+      <Join />
+      <Footer />
     </>
   );
 }

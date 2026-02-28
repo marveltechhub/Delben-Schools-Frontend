@@ -1,3 +1,4 @@
+import AdmissionForm from './components/AdmissionForm';
 import './page.css'
 
 export const metadata = {
@@ -94,9 +95,18 @@ export default function Admissions() {
           Enroll today and become part of a community committed to excellence,
           discipline, and success.
         </p>
-        <button>Contact School Office</button>
+        <button>  <a
+          className="contact-btn"
+          href="https://wa.me/2348060609806?text=Hello%20Delben%20Schools%2C%20I%20have%20a%20question%20about%20admissions."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact school office on WhatsApp"
+          title="Chat with Delben Schools on WhatsApp"
+        >
+          Contact School Office
+        </a></button>
       </div>
-
+ <AdmissionForm />
     </section>
   );
 }

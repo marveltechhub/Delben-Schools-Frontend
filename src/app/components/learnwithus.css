@@ -27,20 +27,27 @@
 /* Image Card */
 .imagetext1 {
   position: relative;
-  width: 220px;        /* fixed width */
-  height: 300px;       /* control height */
-  background: white;
+  width: 100%;
+  max-width: 220px;        /* card won't grow beyond this on large screens */
+  flex: 1 1 220px;         /* responsive: can shrink/grow but prefers 220px */
+  min-width: 160px;        /* reasonable minimum on small screens */
+  aspect-ratio: 11 / 15;   /* keeps the 220x300 proportion (220/300 ≈ 11/15) */
+  background: #fff;
   border-radius: 12px;
-  overflow: hidden;       /* prevents image overflow */
-  flex-shrink: 0;
-  border-bottom: 12px;
+  overflow: hidden;        /* ensures image stays inside rounded corners */
+  box-sizing: border-box;
 }
 
-/* Fix image stretching */
+/* Fix image stretching and ensure it covers the card fully */
 .imagetext1 img {
-  object-fit: cover;   /* 👈 VERY IMPORTANT */
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* important: fills while preserving aspect and cropping */
+  display: block;
+  border-radius: 12px 12px 0 0; /* optional: match card corners */
 }
+
+/* keep overlay text pinned to bottom */
 .imagetext1 p {
   position: absolute;
   bottom: 0;
@@ -48,8 +55,15 @@
   width: 100%;
   margin: 0;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
   font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* adjust layout gap for small screens */
+@media (max-width: 480px) {
+  .flexcontainer { gap: 12px; }
+  .imagetext1 { max-width: 48%; min-width: 140px; aspect-ratio: 3 / 4; }
 }

@@ -6,7 +6,14 @@
   border-radius: 15px;
   margin: 10px;
 }
-
+.timeline-item1 {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-text {
+  display: flex;
+  justify-content: space-between;
+}
 .schoolname {
   color: #FFD700;
 }
@@ -18,49 +25,115 @@
 
 /* TIMELINE */
 .timeline {
-  position: relative;
-  margin-top: 60px;
-  height: 120px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+  height: auto; /* allow content height to determine size */
 }
 
 .timeline-line {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: white;
+  flex: 1 1 auto;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  margin: 0 12px;
+}
+.right-arrow {
+  border: none;
 }
 
-.dot {
-  width: 20px;
-  height: 20px;
-  background-color: #FFD700;
-  border-radius: 50%;
-  margin: 0 auto;
-  border: 4px solid #1A237E;
+.left-arrow {
+  border: none;
 }
 
 .timeline-item {
-  position: absolute;
-  text-align: center;
-  color: white;
+  position: static;          /* remove absolute positioning */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;     /* pill shape */
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  margin: 0;
 }
 
-.timeline-item.left { left: 0; }
-.timeline-item.center { left: 50%; transform: translateX(-50%); }
-.timeline-item.right { right: 0; }
+.timeline-item.left,
+.timeline-item.center,
+.timeline-item.right {
+  /* no-op: keep same base styles */
+}
 
-.timeline-item p {
-  margin-top: 10px;
-  font-weight: bold;
+.timeline-item.active {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-color: rgba(255,215,0,0.9); /* gold accent */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  color: #fff;
+}
+
+/* arrow buttons: circular, with border color and right-side placement */
+.timeline-arrow {
+  order: 2;
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 140ms ease;
+  box-shadow: none;
+}
+
+/* hover / active states */
+.timeline-arrow:hover,
+.timeline-arrow:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(11,108,255,0.12);
+  border-color: rgba(11,108,255,0.9); /* blue highlight on hover */
+}
+
+/* disabled arrow state */
+.timeline-arrow[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* place left/right specific arrows if you need different colors */
+.left-arrow { margin-right: 8px; }
+.right-arrow { margin-left: 8px; }
+
+/* ensure timeline labels remain on the left side (before the flexible line)
+   by ordering the label elements before the timeline-line in DOM or, if DOM
+   differs, force an order here: labels order 0, line order 1, arrows order 2 */
+.timeline-item { order: 0; }
+.timeline-line { order: 1; }
+
+/* responsive tweaks: tighten spacing on small screens */
+@media (max-width: 720px) {
+  .timeline { gap: 8px; margin-top: 20px; }
+  .timeline-item { padding: 6px 10px; font-size: 0.92rem; }
+  .timeline-arrow { width: 44px; height: 44px; min-width: 44px; font-size: 16px; }
+  .timeline-line { margin: 0 8px; }
 }
 
 /* FLEX SECTION */
 .flex {
   display: flex;
   gap: 50px;
-  margin-top: 80px;
   flex-wrap: wrap;
   align-items: center;
 }

@@ -16,12 +16,12 @@ export default function About() {
 
           {/* Image Section */}
           <div className="about-image">
-            <Image
-              src="/logo.png"   // put your image in public
+            {/* <Image
+              src="/bg.jpeg"   // put your image in public
               alt="Delben School"
               width={190}
               height={200}
-            />
+            /> */}
           </div>
 
           {/* Text Section */}

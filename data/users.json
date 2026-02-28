@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "principal1",
+      "fullName": "Principal One",
+      "role": "principal",
+      "email": "principal1@delben.school"
+    },
+    {
+      "id": "u2",
+      "username": "bursar1",
+      "fullName": "Bursar One",
+      "role": "bursar",
+      "email": "bursar1@delben.school"
+    }
+  ]
+}

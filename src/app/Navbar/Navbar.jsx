@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Right Section */}
           <div className="right-section">
-            <Link href="/login" className="login-btn">
+            <Link href="/login" className="login-btn" aria-label="Admin login">
               Login
             </Link>
 

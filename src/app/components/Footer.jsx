@@ -84,7 +84,7 @@ export default function Footer() {
             </span>
             <div>
               <div className="contact-label">Location</div>
-              <div className="contact-text">123 School Lane, MyTown</div>
+              <div className="contact-text">21 Adeyemi Street Egbeda Akowonjo Lagos <br /> 25 Fakoya Street Egbeda Akowonjo Lagos</div>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ export default function Footer() {
             </span>
             <div>
               <div className="contact-label">Email</div>
-              <div className="contact-text">info@marvelschool.edu</div>
+              <div className="contact-text">info@delben.edu.ng</div>
             </div>
           </div>
 
@@ -106,7 +106,7 @@ export default function Footer() {
             </span>
             <div>
               <div className="contact-label">Phone</div>
-              <div className="contact-text">+234 800 000 000</div>
+              <div className="contact-text">+234 806 060 98 06</div>
             </div>
           </div>
         </div>

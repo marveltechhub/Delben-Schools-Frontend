@@ -35,7 +35,6 @@ export default function HeroSlider({ slides: initialSlides, interval = 5000 }) {
       ))}
 
       <div className="hero-overlay">
-        <img src="/logo.png" alt="Delben School logo" className="hero-logo" />
         <h1 className="hero-title">DELBEN SCHOOLS</h1>
         <p className="hero-caption" aria-live="polite">{slides[index].caption}</p>
 

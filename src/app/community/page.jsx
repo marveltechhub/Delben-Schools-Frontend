@@ -100,15 +100,18 @@ export default function Community() {
           always ready to support you. Reach out to us directly on WhatsApp for
           fast responses and helpful guidance.
         </p>
-
-        <a
-          href="https://wa.me/2348000000000"
-          target="_blank"
-          rel="noreferrer"
+ <a
           className="whatsapp-btn"
+          href="https://wa.me/2348060609806?text=Hello%20Delben%20Schools%2C%20I%20have%20a%20question%20about%20admissions."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact school office on WhatsApp"
+          title="Chat with Delben Schools on WhatsApp"
+          
         >
-          Chat with Us on WhatsApp
+Chat with Us on WhatsApp
         </a>
+        
       </div>
 
     </section>

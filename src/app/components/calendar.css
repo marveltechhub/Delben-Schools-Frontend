@@ -1,12 +1,10 @@
-/* ...existing code... */
+/* make headings and general text high-contrast and visible */
 .calendar {
   /* brighter school-friendly background, larger and responsive */
   background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
-  color: var(--foreground);
+  color: #0b2133; /* high-contrast dark blue for body text */
   border-radius: 10px;
   padding: 20px;
-  /* width: min(960px, 96%); */
-  /* max-width: 1100px; */
   margin: 10px;
   box-shadow: 0 6px 18px rgba(20,40,80,0.08);
   font-family: inherit;
@@ -15,6 +13,7 @@
 .calendar h2 {
   margin-bottom: 10px;
   font-size: 1.35rem;
+  color: #0b3a73; /* brand blue - high contrast against light background */
 }
 
 .calendar-now {
@@ -59,11 +58,12 @@
 .event-title {
   font-weight: 700;
   font-size: 1.05rem;
+  color: #072242;
 }
 
 .event-date {
   font-size: 0.95rem;
-  color: #394a59;
+  color: #254055;
 }
 
 /* big, clear countdown */
@@ -103,14 +103,14 @@
 
 .count-label {
   font-size: 0.75rem;
-  color: #2d4a66;
+  color: #234558;
   margin-top: 4px;
   font-weight: 600;
 }
 
 .count-sep {
   font-size: 1.2rem;
-  color: #2d4a66;
+  color: #234558;
   font-weight: 800;
 }
 
@@ -133,4 +133,3 @@
   font-size: 0.95rem;
   color: #2f4b62;
 }
-/* ...existing code... */

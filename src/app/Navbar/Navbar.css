@@ -1,20 +1,22 @@
 .nav-container {
   /* display: flex; */
-  justify-content: center;
+  /* justify-content: center; */
   /* margin-top: 10px; */
-  position: relative;
-  z-index: 1000;
+  /* position: relative; */
+  /* z-index: 1000; */
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #FFD700;
-  width: 100%;
-  /* border-radius: 50px; */
-  height: 60px;
-  padding: 0 25px;
+
+  /* new background: deep blue → brand blue gradient */
+  background: linear-gradient(90deg, #0b3a73 0%, #2A6FBD 100%);
+  color: #fff;
+
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(8, 32, 64, 0.18);
 }
 
 /* Logo */
@@ -32,12 +34,35 @@
 
 .link-container a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
 }
 
 .link-container a:hover {
-  color: #2A6FBD;
+  color: #ffd966; /* soft gold hover */
+}
+
+/* Hover underline animation */
+.link-container a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #2A6FBD;
+  transition: 0.3s ease;
+}
+
+.link-container a:hover::after {
+  width: 100%;
+}
+
+/* Active link underline */
+.link-container a.active::after {
+  width: 100%;
 }
 
 /* Right Section */
@@ -49,11 +74,13 @@
 
 /* Login */
 .login-btn {
-  background-color: #2A6FBD;
-  color: white;
+  background: #ffd700; /* brand gold */
+  color: #0b3a73;
   padding: 8px 18px;
   border-radius: 30px;
   text-decoration: none;
+  font-weight: 700;
+  border: 2px solid rgba(255,215,0,0.12);
 }
 
 /* Menu Icon */
@@ -67,16 +94,18 @@
 .drawer {
   position: fixed;
   top: 0;
+  margin: 10px;
   right: -300px;
   width: 280px;
   height: 100vh;
-  background-color: #2A6FBD;
+  background: linear-gradient(180deg, #193a73 0%, #2A6FBD 100%);
   display: flex;
   flex-direction: column;
   padding: 30px;
   gap: 20px;
   transition: 0.4s ease;
   z-index: 2000;
+  border-radius: 20px;
 }
 
 .drawer.open {
@@ -84,7 +113,7 @@
 }
 
 .drawer a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
 }
@@ -114,32 +143,4 @@
   .login-btn {
     display: none;
   }
-}
-.link-container a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 5px;
-}
-
-/* Hover underline animation */
-.link-container a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background-color: #2A6FBD;
-  transition: 0.3s ease;
-}
-
-.link-container a:hover::after {
-  width: 100%;
-}
-
-/* Active link underline */
-.link-container a.active::after {
-  width: 100%;
 }
