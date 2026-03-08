@@ -1,94 +1,184 @@
+/* Contact container */
 .contact-container {
-  background-color: white;
-  padding: 60px 40px;
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
-  color: black;
+  background-color: #0D1A63;
+  padding:10px;
+  color: white;
+  overflow: hidden;
 }
 
-.colortext {
-  color: #FFD700;
-}
-
-/* FLEX */
-.contact-flex {
+/* Inner flex container */
+.contact-inner {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 0; /* touch slider and text box */
+  align-items: stretch;
 }
 
-/* RED CARD */
-.contact1 {
-  background-color: #B71C1C;
-  padding: 40px;
-  width: 300px;
-  border-radius: 15px;
-  color: white;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* WHATSAPP CARD (WHITE WITH RED BORDER) */
-.contact2 {
-  background-color: white;
-  padding: 40px;
-  width: 300px;
-  border-radius: 15px;
-  border: 3px solid #B71C1C;
-  color: #B71C1C;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* RED BUTTON */
-.btn-red {
-  background-color: white;
-  color: #B71C1C;
-  border: none;
-  padding: 12px 20px;
-  margin-top: 15px;
-  border-radius: 8px;
+/* Ensure slider-left has a visible height */
+.slider-left {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  font-weight: bold;
+  min-width: 300px;
+  min-height: 250px; /* Add minimum height for mobile */
 }
 
-.btn-red:hover {
-  background-color: #FFD700;
-  color: black;
+/* Optional: maintain aspect ratio */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
-/* WHITE BUTTON FOR WHATSAPP */
-.btn-white {
-  background-color: #B71C1C;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  margin-top: 15px;
-  border-radius: 8px;
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  object-fit: contain;
+  background-color: transparent;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.8s ease;
+  z-index: 1;
+}
+
+.slider-img.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+/* Zoom effect on hover */
+.slider-left:hover .slider-img.active {
+  transform: scale(1.05) rotateY(0deg);
+}
+
+/* Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
   cursor: pointer;
-  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.btn-white:hover {
-  background-color: black;
+.dot.active {
+  background: #f4b400;
+  transform: scale(1.2);
 }
-.contact3{
-   
-  width: 300px;
- 
-  background: linear-gradient(135deg, #FFD700, #FFC107);
-  color: black;
-  padding: 60px 40px;
-  border-radius: 15px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+
+/* Right text box */
+.slider-right {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
 }
-.btn-brchhure {
-       background-color: #4E342E;
-  color: #fff;
-  border: none ;
-  padding: 12px 25px;
-  margin-top: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-} 
+
+/* Top Left Excellence text */
+.top-left {
+  color: #ffc107;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 0 20px;
+}
+
+/* Stars Text: big with white background */
+.stars-text {
+  font-size: 40px; /* very big */
+  font-weight: bolder;
+  line-height: 1;
+  letter-spacing: 2px;
+  display: inline-block;
+color: white;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  text-shadow: none;
+}
+.stars-text-below {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+/* Paragraph */
+.slider-right p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.button-container-contact {
+  flex-wrap: wrap;
+}
+
+.button-container-contact a {
+  padding:  15px 20px;
+  background: #f4b400;
+  /* color: #000080; */
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 200px;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button-container-contact a:hover {
+  background: #ffc107;
+  transition: 0.1s ease;
+   background-color: #1E90FF;
+  transform: translateY(-2px); /* subtle lift effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* optional shadow for depth */
+}
+
+/* Responsive: mobile */
+@media(max-width:768px) {
+  .stars-text {
+    font-size: 40px; /* smaller on mobile */
+    padding: 0 10px;
+  }
+  .stars-text-below {
+    padding: 0 10px; ;
+  }
+  .top-left {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .contact-inner {
+    flex-direction: column; /* image slider above text */
+  }
+  .slider-left, .slider-right {
+    width: 100%;
+  }
+  
+  .button-container a{
+    width: 50%;
+  }
+}

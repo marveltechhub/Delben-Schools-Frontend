@@ -1,0 +1,128 @@
+.discover {
+  text-align: left; /* 🔥 Left align everything */
+  margin-top: -20px;
+}
+
+/* ===== TOP BLUE SECTION ===== */
+.discover-bg {
+  position: relative;
+
+  background-color: blue;
+  width: 100%;
+  /* padding: 60px 20px; */
+  /* overflow: hidden; */
+  text-align: center;
+}
+
+/* Transparent Outline Text */
+.discover-text {
+  /* font-size: clamp(40px, 6vw, 90px); */
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  letter-spacing: 3px;
+}
+/* Discover Individual Bg */
+.about {
+  background-image: url(/about.png);
+}
+.academics {
+  background-image: url(/academics1.jpg);
+}
+.facility {
+background-image: url(/facility.jpg);
+}
+.lotc {
+  background-image: url(/lotc1.jpg);
+}
+/* ===== CONTAINER ===== */
+.discover-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  /* padding: 60px 5%; */
+  background-color: #ffffff;
+}
+
+/* ===== COLUMNS ===== */
+.discover-column {
+  flex: 1;
+  min-width: 250px;
+margin: 10px;
+  padding: 10px;
+
+  /* 🔥 Background image */
+  /* background-image: url("/ben.jpg"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 350px;
+
+  /* Overlay effect */
+  position: relative;
+  color: white;
+}
+
+/* Dark overlay for readability */
+.discover-column::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  /* border-radius: 10px; */
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.discover-column * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Column Titles */
+.discover-column h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Links */
+.discover-column a {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.discover-column a:hover {
+  color: #4da6ff;
+}
+/* White line */
+.white-line {
+     width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+@media (max-width: 1000px) {
+  .discover-container {
+    flex-wrap: wrap;
+
+  }
+
+  .discover-column {
+    flex: 1 1 100%;
+    min-height: 300px;
+  }
+
+  .discover {
+    margin-top: 20px;    
+
+  }
+}

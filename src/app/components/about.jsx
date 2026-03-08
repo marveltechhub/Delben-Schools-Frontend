@@ -1,56 +1,61 @@
-import './about.css'
-import localFont from "next/font/local";
-import Image from 'next/image';
-const delbenFont = localFont({
-  src: "/FjallaOne-Regular.ttf", // relative to public folder
-  weight: "400",
-  style: "normal",
-  variable: "--delben-font",
-});
+"use client"
+import { useEffect, useState } from "react";
+import "./about.css";
+
 export default function About() {
+
+  const [showNotice, setShowNotice] = useState(true);
+
+  useEffect(() => {
+    const closed = sessionStorage.getItem("noticeClosed");
+    if (closed) setShowNotice(false);
+  }, []);
+
+  const closeNotice = () => {
+    setShowNotice(false);
+    sessionStorage.setItem("noticeClosed", "true");
+  };
+
+  if (!showNotice) return null;
+
   return (
-    <>
-      <div className="about">
+    <div className="notice-container">
 
-        <div className="about-flex">
-
-          {/* Image Section */}
-          <div className="about-image">
-            {/* <Image
-              src="/bg.jpeg"   // put your image in public
-              alt="Delben School"
-              width={190}
-              height={200}
-            /> */}
-          </div>
-
-          {/* Text Section */}
-          <div className="about-content">
-            <h3>
-              WELCOME TO 
-            </h3>
-
-            <span className={`${delbenFont.className} textcolor`}>
-              DELBEN 
-            </span>
-                <h3 style={{marginTop:-20}}> S C H O O L S</h3>
-            <p className="abouttext">
-              Delben Schools is a center of excellence committed to nurturing 
-              young minds and building future leaders. We provide a balanced 
-              education that combines academic strength, moral discipline, 
-              creativity, and innovation. Our dedicated teachers and supportive 
-              learning environment help every student discover their potential 
-              and achieve greatness.
-              
-              At Delben, we believe education goes beyond the classroom. 
-              We foster leadership, confidence, and character development 
-              to prepare students for global opportunities and lifelong success.
-            </p>
-          </div>
-
-        </div>
-
+      {/* TOP WAVE */}
+      <div className="wave wave-top">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 
+          C120,80 240,20 360,40 
+          C480,60 600,100 720,80
+          C840,60 960,20 1080,40
+          C1200,60 1320,80 1440,60
+          L1440,120 L0,120 Z"/>
+        </svg>
       </div>
-    </>
-  )
+
+      <button className="notice-close" onClick={closeNotice}>✕</button>
+
+      <div className="notice-box">
+        <h3>📢 Admission Notice</h3>
+        <p>
+          Admission for the <strong>2026/2027 Academic Session</strong> is
+          currently ongoing. Parents and guardians are advised to visit the
+          school office for registration and enquiries.
+        </p>
+      </div>
+
+      {/* BOTTOM WAVE */}
+      <div className="wave wave-bottom">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 
+          C120,80 240,20 360,40 
+          C480,60 600,100 720,80
+          C840,60 960,20 1080,40
+          C1200,60 1320,80 1440,60
+          L1440,120 L0,120 Z"/>
+        </svg>
+      </div>
+
+    </div>
+  );
 }

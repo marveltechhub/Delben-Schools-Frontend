@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import './learnwithus.css'
 import localFont from "next/font/local";
+import Link from 'next/link';
 
 const delbenFont = localFont({
-  src: "/FjallaOne-Regular.ttf",
+  src: "/roboto.ttf",
   weight: "400",
   style: "normal",
   variable: "--delben-font",
@@ -11,36 +12,32 @@ const delbenFont = localFont({
 
 export default function Learn() {
   return (
-    <div className="learn">
-      <h3>
-        Choose <span className={`${delbenFont.className} learntext`}>DELBEN</span>
-      </h3>
+    <>
+    <section className="info-section">
 
-      <h3 className={`${delbenFont.className} textheader`}>
-        WHY LEARN WITH US ?
-      </h3>
+  <div className="info-container">
 
-      <div className="flexcontainer">
-        <div className="imagetext1">
-          <Image src="/student.jpeg" alt="Delben School" fill />
-          <p>Smart Learning</p>
-        </div>
-
-        <div className="imagetext1">
-          <Image src="/ben.jpg" alt="Delben School" fill />
-          <p>Active Students</p>
-        </div>
-
-        <div className="imagetext1">
-          <Image src="/student1.jpeg" alt="Delben School" fill />
-          <p>Student Success</p>
-        </div>
-
-        <div className="imagetext1">
-          <Image src="/student3.jpeg" alt="Delben School" fill />
-          <p>Team Learning</p>
-        </div>
-      </div>
+    <div className="info-image">
+      <img src="/exam.jpg" alt="school"/>
     </div>
+
+    <div className="info-box">
+<h1 className={delbenFont.className}>FIRST ENTRANCE <br /> EXAMINATION 2026/2027 SESSION</h1>
+      <p >
+        This is to notify the general public that the DELBEN First Entrance Examination comes up on <span className="p-text-learn">Saturday, 11th April 2026, by 9.00am.</span> Interested candidates should begin to apply immediately.
+      </p>
+
+<div className="button-container">
+  <Link href="/admission-advert">VIEW ADMISSION ADVERT</Link>
+  <Link href="/admission-process">VIEW ADMISSION PROCESS</Link>
+  <Link href="/admission-form">VIEW ADMISSION BROCHURE</Link>
+  <Link href="/admission-form">APPLY ONLINE NOW</Link>
+</div>
+    </div>
+
+  </div>
+
+</section>
+    </>
   )
 }

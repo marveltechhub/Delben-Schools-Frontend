@@ -2,8 +2,7 @@
 .hero-slider {
   position: relative;
   width: 100%;
-  /* responsive height: not too small on phones, not too tall on desktop */
-  height: clamp(320px, 58vh, 760px);
+  height: clamp(380px, 100vh, 1050px);
   overflow: hidden;
   background: #111;
 }
@@ -16,6 +15,8 @@
   background-position: center center; /* keep important part visible */
   background-repeat: no-repeat;
   opacity: 0;
+  height: 100%  ;
+  padding: 120px;
   transform: scale(1.03);
   transition: opacity 900ms ease, transform 900ms ease;
   will-change: opacity, transform;
@@ -90,12 +91,65 @@
   justify-content: center;
   z-index: 2;
 }
+/* Arrow slider */
+/* Arrow buttons */
+.slider-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0,0,0,0.45);
+  color: white;
+
+  font-size: 28px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+/* left arrow */
+.slider-arrow.left{
+  left: 20px;
+}
+
+/* right arrow */
+.slider-arrow.right{
+  right: 20px;
+}
+
+.slider-arrow:hover{
+  background: rgba(0,0,0,0.75);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* mobile */
+@media (max-width:720px){
+
+  .slider-arrow{
+    width:40px;
+    height:40px;
+    font-size:22px;
+  }
+
+}
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 999px;
   background: rgba(255,255,255,0.45);
   border: none;
+  display: none;
   cursor: pointer;
   transition: transform 150ms ease, background 150ms ease;
 }

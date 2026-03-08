@@ -1,39 +1,79 @@
 "use client"
 import React from "react";
 import "./join.css";
-
-const images = [
-  "/ben.jpg",
-  "/class.jpg",
-  "/student.jpg",
-  "/about.png"
-];
+import Link from "next/link";
 
 export default function Join() {
   return (
-    <section className="join-section" aria-labelledby="join-heading">
-      <div className="join-container">
-        <div className="join-visual">
-          <div className="image-grid" aria-hidden="true">
-            {images.map((src, i) => (
-              <img key={i} src={src} alt={`Join image ${i + 1}`} className={`thumb thumb-${i}`} />
-            ))}
+    <section className="join">
+      <h1>Popular Links</h1>
+
+      <div className="over-join">
+        <div className="join-container">
+
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/managements.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>Management</h3>
+    </div>
+            </Link>
           </div>
-
-          <div className="join-cta" role="region" aria-label="Join call to action">
-            <h2 id="join-heading">let's secure your kid's future</h2>
-
-            <button className="btn join-btn" type="button" onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}>
-              Join Us
-              <span className="btn-arrow" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12h14M13 5l6 7-6 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
-            </button>
-
-           
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/sport.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>STUDENTS' <br /> EXPERIENCE</h3>
+    </div>
+            </Link>
           </div>
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/media.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>GALLERY MEDIA</h3>
+    </div>
+            </Link>
+          </div>
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/activate.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>ACTIVATE</h3>
+    </div>
+            </Link>
+          </div>
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/extra.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>CO-CURRICULAR <br /> ACTIVITIES</h3>
+    </div>
+            </Link>
+          </div>
+          
+          <div className="frame">
+            <Link href="/managements">
+              <img src="/cu.jpg" alt="" />
+              <div className="overlay"></div>
+                <div className="text-bar">
+      <h3>OUR CURRICULUM</h3>
+    </div>
+            </Link>
+          </div>
+          
+
+          
         </div>
       </div>
     </section>

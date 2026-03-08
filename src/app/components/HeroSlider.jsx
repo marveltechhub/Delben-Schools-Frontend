@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./heroSlider.css";
 
 export default function HeroSlider({ slides: initialSlides, interval = 5000 }) {
+
   const slides = initialSlides ?? [
     { id: 1, image: "/student.jpeg", caption: "Inspiring learning every day" },
     { id: 2, image: "/student1.jpeg", caption: "Strong academics and character" },
@@ -13,43 +14,69 @@ export default function HeroSlider({ slides: initialSlides, interval = 5000 }) {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    timerRef.current = setInterval(() => setIndex(i => (i + 1) % slides.length), interval);
+    startAutoSlide();
     return () => clearInterval(timerRef.current);
-  }, [slides.length, interval]);
+  }, []);
 
-  function goTo(i) {
+  function startAutoSlide(){
     clearInterval(timerRef.current);
+
+    timerRef.current = setInterval(() => {
+      setIndex(i => (i + 1) % slides.length);
+    }, interval);
+  }
+
+  function nextSlide(){
+    setIndex(i => (i + 1) % slides.length);
+    startAutoSlide();
+  }
+
+  function prevSlide(){
+    setIndex(i => (i - 1 + slides.length) % slides.length);
+    startAutoSlide();
+  }
+
+  function goTo(i){
     setIndex(i);
-    timerRef.current = setInterval(() => setIndex(p => (p + 1) % slides.length), interval);
+    startAutoSlide();
   }
 
   return (
-    <div className="hero-slider" role="region" aria-label="Homepage hero slider">
-      {slides.map((s, i) => (
+
+    <div className="hero-slider">
+
+      {slides.map((s,i)=>(
         <div
           key={s.id}
-          className={`slide ${i === index ? "active" : ""}`}
-          style={{ backgroundImage: `url(${s.image})` }}
-          aria-hidden={i !== index}
+          className={`slide ${i===index ? "active":""}`}
+          style={{ backgroundImage:`url(${s.image})` }}
         />
       ))}
 
-      <div className="hero-overlay">
-        <h1 className="hero-title">DELBEN SCHOOLS</h1>
-        <p className="hero-caption" aria-live="polite">{slides[index].caption}</p>
+      {/* LEFT ARROW */}
+      <button className="slider-arrow left" onClick={prevSlide}>
+        ❮
+      </button>
 
-        <div className="hero-controls" role="tablist" aria-label="Slide navigation">
-          {slides.map((_, i) => (
+      {/* RIGHT ARROW */}
+      <button className="slider-arrow right" onClick={nextSlide}>
+        ❯
+      </button>
+
+      <div className="hero-overlay">
+
+        <div className="hero-controls">
+          {slides.map((_,i)=>(
             <button
               key={i}
-              className={`dot ${i === index ? "active" : ""}`}
-              onClick={() => goTo(i)}
-              aria-pressed={i === index}
-              aria-label={`Go to slide ${i + 1}`}
+              className={`dot ${i===index ? "active":""}`}
+              onClick={()=>goTo(i)}
             />
           ))}
         </div>
+
       </div>
+
     </div>
   );
 }

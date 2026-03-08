@@ -1,197 +1,88 @@
-/* ...existing code... */
-.join-section {
-  background: #ffffff;
-  padding: 40px 12px;
+/* Join Section */
+.join {
+  padding: 24px 32px;
+  background: #f9fafb;
+  text-transform: uppercase;
+}
+
+.join h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #6D28D9;
+  border-left: 5px solid #A78BFA;
+  padding-left: 12px;
+}
+
+/* Center Container */
+.over-join {
   display: flex;
   justify-content: center;
-  margin: 10px ;
-  border-radius: 15px;
-  box-shadow: 0 12px 40px rgba(16,40,80,0.04);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  align-items: center;
 }
 
-.container {
-  max-width: 1200px;
+.join-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+/* Frame */
+/* Frame */
+.frame {
+  position: relative;
+  background: #ffffff;
+  padding: 5px;
+  height: 300px;
+  width: 350px;
+  border-radius: 14px 14px 32px 14px;
+  border-bottom-right-radius: 120px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+}
+
+/* Image */
+.frame img {
   width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-
-.join-visual {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 18px;
-  padding: 22px;
-  border-radius: 14px;
-}
-
-/* circular umbrella cluster above the CTA */
-.image-grid {
-  width: 320px;
-  height: 200px;
-  margin: 0 auto;
-  position: relative;
-  pointer-events: none;
-}
-
-/* make each image round and positioned around a central point */
-.image-grid .thumb {
-  position: absolute;
-  width: 96px;
-  height: 96px;
+  height: 100%;
+  border-radius: 8px;
+  border-bottom-right-radius: 120px;
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 10px 26px rgba(20,40,80,0.08);
-  transition: transform 260ms ease, box-shadow 260ms ease;
-  border: 2px solid rgba(42,111,189,0.06);
+  transition: transform 0.5s ease;
 }
 
-/* position images in a circular pattern */
-.image-grid .thumb:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-.image-grid .thumb:nth-child(2) { top: 20px; left: 70%; transform: translate(-50%, -50%); }
-.image-grid .thumb:nth-child(3) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
-.image-grid .thumb:nth-child(4) { top: 70%; left: 70%; transform: translate(-50%, -50%); }
-.image-grid .thumb:nth-child(5) { top: 100%; left: 50%; transform: translateX(-50%); }
-.image-grid .thumb:nth-child(6) { top: 70%; left: 30%; transform: translate(-50%, -50%); }
-.image-grid .thumb:nth-child(7) { top: 50%; left: 0; transform: translate(-50%, -50%); }
-.image-grid .thumb:nth-child(8) { top: 20px; left: 30%; transform: translate(-50%, -50%); }
-
-/* CTA centered with big headline */
-.join-cta {
-  background: #fff;
-  text-align: center;
-  padding: 34px 22px;
-  border-radius: 12px;
-  margin: 20px;
-  border: 1px solid rgba(20,40,80,0.04);
-  box-shadow: 0 8px 30px rgba(16,40,80,0.04);
+/* Zoom */
+.frame:hover img {
+  transform: scale(1.15);
 }
 
-.join-cta h2 {
-  margin: 0 0 18px;
-  font-size: 2rem;
-  line-height: 1.05;
-  color: #0b3a73;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-/* Light red rounded button with pulse/vibration ring */
-.join-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 22px;
-  background: linear-gradient(180deg, #ff8a8a 0%, #ff6b6b 100%);
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  overflow: visible;
-  box-shadow: 0 8px 22px rgba(255,107,107,0.18);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-/* arrow spacing */
-.btn-arrow svg { display: block; }
-
-/* subtle lift on hover */
-.join-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(255,107,107,0.22);
-}
-
-/* vibrating ring animation around the button */
-.join-btn::before {
-  content: "";
+/* Blue overlay */
+.overlay {
   position: absolute;
-  inset: -8px;
-  border-radius: 999px;
-  background: radial-gradient(circle at center, rgba(255,107,107,0.16), rgba(255,107,107,0.035) 40%, transparent 60%);
-  filter: blur(6px);
+  inset: 0;
+  background: rgba(37, 99, 235, 0.45);
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 220ms ease, transform 220ms ease;
-  pointer-events: none;
+  transition: opacity 0.4s ease;
+  border-bottom-right-radius: 120px;
 }
 
-/* pulse animation - runs continuously at low intensity */
-@keyframes joinPulse {
-  0% { transform: scale(0.92); opacity: 0.18; }
-  50% { transform: scale(1.02); opacity: 0.36; }
-  100% { transform: scale(0.92); opacity: 0.18; }
+.frame:hover .overlay {
+  opacity: 1;
 }
-.join-btn::after {
-  content: "";
+
+/* TEXT (always visible) */
+.text-bar {
   position: absolute;
-  inset: -14px;
-  border-radius: 999px;
-  background: radial-gradient(circle at center, rgba(255,107,107,0.12), transparent 45%);
-  opacity: 0.18;
-  filter: blur(8px);
-  animation: joinPulse 2.4s infinite ease-in-out;
-  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  /* background: rgba(0,0,0,0.55); */
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
-
-/* small helper subtext */
-.subtext {
-  margin-top: 12px;
-  color: #5b6b7a;
-  font-size: 0.95rem;
-}
-
-/* responsive */
-@media (min-width: 880px) {
-  .join-visual {
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  }
-  .image-grid { order: 1; }
-  .join-cta { order: 2; max-width: 640px; margin: 0 auto; }
-  .image-grid .thumb { width: 160px; height: 110px; }
-}
-
-/* center images on small screens */
-@media (max-width: 520px) {
-  /* ensure the visual grid centers its children */
-  .join-visual {
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    padding: 12px;
-    grid-template-columns: 1fr; /* single column */
-  }
-
-  /* keep the image grid centered and scale down */
-  .image-grid {
-    margin: 0 auto;
-    width: 260px;
-    height: 160px;
-  }
-
-  /* reduce thumb size and keep circular layout */
-  .image-grid .thumb {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-  }
-
-  /* slightly adjust circular positions so they remain visually centered */
-  .image-grid .thumb:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-  .image-grid .thumb:nth-child(2) { top: 18px; left: 70%; transform: translate(-50%, -50%); }
-  .image-grid .thumb:nth-child(3) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
-  .image-grid .thumb:nth-child(4) { top: 72%; left: 70%; transform: translate(-50%, -50%); }
-  .image-grid .thumb:nth-child(5) { top: 100%; left: 50%; transform: translateX(-50%); }
-  .image-grid .thumb:nth-child(6) { top: 72%; left: 30%; transform: translate(-50%, -50%); }
-  .image-grid .thumb:nth-child(7) { top: 50%; left: 0; transform: translate(-50%, -50%); }
-  .image-grid .thumb:nth-child(8) { top: 18px; left: 30%; transform: translate(-50%, -50%); }
-}
-
-/* ...existing code... */

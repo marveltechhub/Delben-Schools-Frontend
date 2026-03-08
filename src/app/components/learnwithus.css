@@ -1,69 +1,85 @@
-.learn {
-  background-color: #4E342E;
-  margin: 10px;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+/* Section wrapper */
+.info-section{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:60px 20px;
 }
 
-.learntext {
-  color: #FFD700;
+/* Image + Box container */
+.info-container{
+  max-width:1100px;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:stretch; /* makes them equal height */
 }
 
-.textheader {
-  font-size: 30px;
-  margin-bottom: 30px;
-  color: white;
+/* Image */
+.info-image{
+  flex:1;
+  min-width:300px;
 }
 
-/* Container */
-.flexcontainer {
-  display: flex;
-  gap: 20px;
-  padding-bottom: 10px;
-  flex-wrap: wrap;
+.info-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
-/* Image Card */
-.imagetext1 {
-  position: relative;
-  width: 100%;
-  max-width: 220px;        /* card won't grow beyond this on large screens */
-  flex: 1 1 220px;         /* responsive: can shrink/grow but prefers 220px */
-  min-width: 160px;        /* reasonable minimum on small screens */
-  aspect-ratio: 11 / 15;   /* keeps the 220x300 proportion (220/300 ≈ 11/15) */
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;        /* ensures image stays inside rounded corners */
-  box-sizing: border-box;
+/* Text Box */
+.info-box{
+  flex:1;
+  min-width:300px;
+  background:#000080;
+  color:white;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
-
-/* Fix image stretching and ensure it covers the card fully */
-.imagetext1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* important: fills while preserving aspect and cropping */
-  display: block;
-  border-radius: 12px 12px 0 0; /* optional: match card corners */
+.info-box p {
+  margin-top:20px;
+  line-height:1.6;
 }
-
-/* keep overlay text pinned to bottom */
-.imagetext1 p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  text-align: center;
+.p-text-learn {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 20px;
   font-weight: bold;
-  box-sizing: border-box;
 }
 
-/* adjust layout gap for small screens */
-@media (max-width: 480px) {
-  .flexcontainer { gap: 12px; }
-  .imagetext1 { max-width: 48%; min-width: 140px; aspect-ratio: 3 / 4; }
+/* Buttons container (2 per row) */
+.button-container{
+  margin-top:20px;
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+}
+
+/* Buttons */
+.button-container a{
+  width:100%; /* 🔥 makes 2 per row */
+  padding:12px;
+  text-align:center;
+  border-radius: 30px;
+  background:#f4b400;
+  color:#000080;
+  text-decoration:none;
+  font-weight:600;
+  /* border:1px solid white; */
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  .info-container{
+    flex-direction:column;
+  }
+
+  .button-container a{
+    width:100%; /* stack buttons on phone */
+  }
+
 }

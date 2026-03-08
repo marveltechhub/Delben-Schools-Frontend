@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import  "./page.module.css";
 import localFont from "next/font/local";
 import About from "./components/about";
 import Learn from "./components/learnwithus";
@@ -9,7 +9,8 @@ import Testimonials from "./components/testimonials";
 import Join from "./components/join";
 import Footer from "./components/Footer";
 import HeroSlider from "./components/HeroSlider";
-import WelcomeModal from "./components/WelcomeModal";
+import AdPopup from "./components/WelcomeModal";
+import Admission from "./components/Admission";
 
 export const metadata = {
   title: "Delben Schools | HomePage",
@@ -48,16 +49,19 @@ const delbenFont = localFont({
 export default function HomePage() {
   return (
     <>
+    <div className="body">
       <HeroSlider />
-      <WelcomeModal />
-      <About />
+      <AdPopup />
+      {/* <About /> */}
       <Learn />
       <ContactUs />
       <Journey />
       <Calendar />
       <Testimonials />
       <Join />
+      <Admission />
       <Footer />
+      </div>
     </>
   );
 }

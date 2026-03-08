@@ -1,0 +1,88 @@
+.admission-container {
+    padding: 50px;
+    width: 100vw;
+    min-height: 60vh; /* ensure some height */
+    background-image: url("/academics.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    color: black;
+    background-color: #f9f9f9;
+    border-bottom: 5px solid #ccc;
+    border-top: 5px solid #ccc;
+    box-sizing: border-box;
+}
+
+.admission-flex {
+    display: flex;
+    align-items: stretch; /* make children same height */
+    justify-content: center;
+    flex-wrap: wrap; /* wrap on smaller screens */
+    height: 100%;
+}
+
+.white-container {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 400px; /* flex-grow, shrink, basis */
+    box-sizing: border-box;
+    max-width: 600px;
+}
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.red-container {
+    background-color: #e63946; /* bright red */
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 200px; /* prevent collapsing on small screens */
+}
+
+.red-container button {
+    padding: 15px 30px;
+    background-color: white;
+    color: #e63946;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.red-container button:hover {
+    background-color: #f1f1f1;
+    color: #d62828;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .admission-flex {
+        flex-direction: column; /* stack vertically */
+        align-items: stretch;
+    }
+
+    .white-container, .red-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .red-container {
+        min-height: 150px;
+        padding: 20px 0;
+    }
+}

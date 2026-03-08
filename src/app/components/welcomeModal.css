@@ -1,170 +1,109 @@
-.wm-backdrop {
+.ad-overlay {
   position: fixed;
-  inset: 0;
-  background: linear-gradient(rgba(3,7,18,0.6), rgba(3,7,18,0.6));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1200;
-  padding: 20px;
-}
-
-.wm-card {
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 760px;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 18px 60px rgba(6,11,34,0.6);
-  overflow: hidden;
+  height: 100vh;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal */
+.ad-modal {
   position: relative;
-  display: grid;
-  gap: 12px;
-  padding: 18px;
-  box-sizing: border-box;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  margin: 10px;
+  width: 420px;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+  background-image: url('/admission.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-.wm-close {
+/* dark overlay inside modal */
+.ad-modal::before{
+  content: "";
   position: absolute;
-  right: 12px;
-  top: 12px;
-  background: transparent;
-  border: none;
-  color: #374151;
-  font-size: 18px;
-  cursor: pointer;
-  transition: transform 160ms ease, color 160ms ease, box-shadow 160ms ease;
-  will-change: transform, color, box-shadow;
-  -webkit-tap-highlight-color: transparent; /* remove tap highlight on mobile */
-}
-.wm-close:hover {
-  color: #0b3a73;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(11,108,255,0.12);
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.8)
+  );
 }
 
-/* active / keyboard focus (works on touch too) */
-.wm-close:active,
-.wm-close:focus-visible {
-  transform: translateY(-4px);
-  color: #0b3a73;
-  box-shadow: 0 8px 18px rgba(11,108,255,0.12);
-  outline: none;
-}
-
-/* ensure touch-only devices get the same lift on press and avoid inconsistent :hover */
-@media (hover: none) {
-  .wm-close:hover { color: #374151; transform: none; box-shadow: none; } /* neutralize hover on touch-only devices */
-  .wm-close:active { transform: translateY(-4px); color: #0b3a73; box-shadow: 0 8px 18px rgba(11,108,255,0.12); }
-}
-
-.wm-top {
-  text-align: center;
-  padding-top: 6px;
-}
-
-.wm-logo {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  margin: 0 auto 8px;
-}
-
-.wm-top h1 {
-  margin: 0;
-  font-size: 1.9rem;
-  color: #0b3a73;
-  font-weight: 900;
-}
-
-.wm-sub {
-  margin: 6px 0 0;
-  color: #475569;
-  font-size: 0.98rem;
-}
-
-.wm-body {
-  display: grid;
-  gap: 10px;
-  padding: 6px 6px 12px;
-}
-
-.wm-label {
+/* content container */
+.ad-container{
+  position: relative;
+  color: white;
+  padding: 40px 30px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 0.95rem;
-  color: #0f1724;
-}
-
-.wm-label textarea {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(15,35,65,0.08);
-  resize: vertical;
-  min-height: 62px;
-}
-
-.wm-label.file input[type="file"] {
-  margin-top: 6px;
-}
-
-.wm-file-name {
-  margin-top: 6px;
-  color: #334155;
-  font-size: 0.92rem;
-}
-
-.wm-note {
-  color: #6b7280;
-  font-size: 0.82rem;
-  margin-top: 6px;
-}
-
-.wm-actions {
-  display: flex;
-  gap: 12px;
   justify-content: center;
-  margin-top: 6px;
-  flex-wrap: wrap;
+  height: 100%;
 }
 
-.wm-btn {
-  padding: 12px 18px;
-  border-radius: 999px;
+/* headline */
+.ad-container h3{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+/* Apply button */
+.apply-btn{
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
   border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 800;
-  font-size: 0.95rem;
+
+  background: linear-gradient(45deg,#ff7a00,#ffb300);
+  color: white;
+
+  transition: 0.3s;
 }
 
-.wm-btn.enroll {
-  background: linear-gradient(180deg,#1e90ff,#0b6cff);
-  color: #fff;
-  box-shadow: 0 8px 26px rgba(11,108,255,0.14);
+.apply-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-.wm-btn.whatsapp {
-  background: linear-gradient(180deg,#25d366,#16a34a);
-  color: #fff;
-  box-shadow: 0 8px 26px rgba(37,211,102,0.12);
+/* Close button */
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255,255,255,0.9);
+  color: black;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+  z-index: 2;
 }
 
-.wm-dontshow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-/* Responsive */
-@media (max-width: 720px) {
-  .wm-card { padding: 14px; max-width: 560px; border-radius: 12px; }
-  .wm-top h1 { font-size: 1.4rem; }
-  .wm-logo { width: 56px; height: 56px; }
-  .wm-actions { gap: 8px; }
-  .wm-btn { padding: 10px 14px; font-size: 0.92rem; }
+.close-btn:hover{
+  background: red;
+  color: white;
 }

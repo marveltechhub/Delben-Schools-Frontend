@@ -5,6 +5,7 @@ import Splash from "./Splash";
 import Navbar from "./Navbar/Navbar";
 import HomePage from "./home/page";
 import BackToTop from "./BackToTop";
+import UpperNav from "./Navbar/upperNav";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +26,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Splash>
-          <Navbar />
+          {/* <UpperNav /> */}
+          <Navbar  />
           {children}
           <BackToTop />
         </Splash>
