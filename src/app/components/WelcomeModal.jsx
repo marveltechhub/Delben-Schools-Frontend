@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import './welcomeModal.css';
+import Link from "next/link";
 
 export default function AdPopup() {
 
@@ -46,9 +47,12 @@ export default function AdPopup() {
             2026/2027 ACADEMIC SESSION
           </h3>
           <p>Hurray!!! All our campuses are now admitting into JSS1 for 2026/2027 academic session.</p>
-          <button className="apply-btn">
-            Apply Now
-          </button>
+          <Link className="apply-btn" href="/admission">
+            <span>Apply Now</span>
+          
+          </Link>
+
+          
 
         </div>
 

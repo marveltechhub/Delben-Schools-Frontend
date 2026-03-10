@@ -52,7 +52,7 @@ export default function HomePage() {
     <div className="body">
       <HeroSlider />
       <AdPopup />
-      {/* <About /> */}
+       {/* <About /> */}
       <Learn />
       <ContactUs />
       <Journey />

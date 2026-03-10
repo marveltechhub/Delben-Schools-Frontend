@@ -32,7 +32,10 @@
   align-items: center;
 }
 
-.brand-logo { flex: 0 0 auto; }
+.brand-logo { flex: 0 0 auto;
+height: 100px;
+width: 100px;
+}
 .brand-text .school-name { font-weight: 800; color: #fff; font-size: 1.05rem; }
 .brand-text .school-tag { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-top: 2px; }
 

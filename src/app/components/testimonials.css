@@ -106,6 +106,9 @@
   font-weight: 600;
   transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
 }
+.discover-button span {
+  text-decoration: none;
+}
 
 .discover-button--arrow {
   background-color: #1d4ed8;
@@ -182,6 +185,9 @@
   font-weight: 600;
   box-shadow: 0 10px 22px rgba(236, 72, 153, 0.45);
   transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+.news-view-more span {
+  text-decoration: none;
 }
 
 .news-view-more:hover {

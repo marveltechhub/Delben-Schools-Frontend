@@ -39,7 +39,10 @@ margin-right: -24rem;
 .menu-container.active{
   transform: translateX(0);
 }
-
+/* Menu Span */
+.apps-menu-label {
+  text-decoration: none;
+}
 
 /* DISCOVER */
 

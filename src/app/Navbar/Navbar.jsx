@@ -384,7 +384,7 @@ export default function Navbar() {
             {/* <Link href="/discover/about" onClick={() => setMenuOpen(false)}>About Delben</Link>
             <Link href="/discover/team" onClick={() => setMenuOpen(false)}>Our Team</Link>
             <Link href="/discover/testimonials" onClick={() => setMenuOpen(false)}>Testimonials</Link> */}
-            <MenuNav onNavigate={() => setMenuOpen(false)} />
+            <Discover />  
           </details>
 
           <details>

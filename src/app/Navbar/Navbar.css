@@ -63,7 +63,11 @@
 }
 .smaller-text {
   font-size: 12px;
+  text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
+}
+.link span {
+  text-decoration: none;
 }
 .upper-right {
   display: flex;
@@ -71,7 +75,7 @@
   justify-content: right;
 }
 
-.apply-btn {
+.apply-btn1 {
   background: #ffd966;
   color: #0b3a73;
   padding: 8px 18px;

@@ -29,7 +29,6 @@
 }
 
 /* Frame */
-/* Frame */
 .frame {
   position: relative;
   background: #ffffff;
@@ -39,7 +38,7 @@
   border-radius: 14px 14px 32px 14px;
   border-bottom-right-radius: 120px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Image */
@@ -52,7 +51,7 @@
   transition: transform 0.5s ease;
 }
 
-/* Zoom */
+/* Image zoom */
 .frame:hover img {
   transform: scale(1.15);
 }
@@ -61,8 +60,10 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(37, 99, 235, 0.45);
+  /* background: rgba(37, 99, 235, 0.45); */
   opacity: 0;
+  width: 100%;
+  height: 100%;
   transition: opacity 0.4s ease;
   border-bottom-right-radius: 120px;
 }
@@ -71,18 +72,20 @@
   opacity: 1;
 }
 
-/* TEXT (always visible) */
-.text-bar {
+/* SIDE TAB */
+.side-tab {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  padding: 30px;
-  /* background: rgba(0,0,0,0.55); */
+  /* left: -45px; */
+  top: 20%;
+  transform: translateY(-50%);
+  background: #6D28D9;
   color: white;
-  font-size: 18px;
+  padding: 12px 8px;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }

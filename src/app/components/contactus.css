@@ -138,16 +138,22 @@ color: white;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
   width: 200px;
   border-radius: 30px;
   text-align: center;
   transition: all 0.3s ease;
+}
+.button-container-contact a span {
+  text-decoration: none;
 }
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  text-decoration: none;
 }
 
 .button-container-contact a:hover {

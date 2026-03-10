@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="footer-col brand-col">
           <div className="brand">
             {/* simple SVG logo */}
-           <Image src="/logo.png" alt="Marvel School logo" width={48} height={48} className="brand-logo" />
-
+           {/* <Image src="/favicon.ico" alt="Marvel School logo" width={58} height={58} className="brand-logo" /> */}
+<img src="/favicon.ico" alt=""  className="brand-logo"/>
             <div className="brand-text">
               <div className="school-name">Delben Schools</div>
               <div className="school-tag">Learning • Caring • Growing</div>
@@ -48,13 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-col newsletter-col" aria-label="Newsletter signup">
-          <h4>Newsletter</h4>
-          <p className="newsletter-note">Stay updated — get our newsletter.</p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="footer-email" className="sr-only">Email address</label>
-            <input id="footer-email" type="email" placeholder="your@email.com" required />
-            <button type="submit" className="subscribe-btn">Subscribe</button>
-          </form>
+        
 
           <div className="socials" aria-label="Social media">
             <a href="#" className="social" aria-label="Facebook">

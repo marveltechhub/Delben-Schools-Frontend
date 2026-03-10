@@ -176,6 +176,7 @@ background: #D8CDCB;
 
 .water-btn-label {
   position: relative;
+  text-decoration: none;
   z-index: 2;
 }
 

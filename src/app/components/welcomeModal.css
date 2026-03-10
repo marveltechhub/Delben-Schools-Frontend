@@ -69,7 +69,8 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-
+display: flex;
+justify-content: center;
   background: linear-gradient(45deg,#ff7a00,#ffb300);
   color: white;
 
@@ -80,7 +81,10 @@
   transform: scale(1.05);
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
-
+.apply-btn span {
+  text-align: center;
+  text-decoration: none;
+}
 /* Close button */
 .close-btn{
   position: absolute;

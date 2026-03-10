@@ -31,13 +31,17 @@
   color: #0f172a;
   text-transform: uppercase;
 }
-
+.journey-kicker-text {
+  text-decoration: none;
+  font-size: 20px;
+}
 .journey-dash {
   display: inline-block;
   width: 20px;
   text-align: center;
   color: #2563eb;
   font-weight: 800;
+  font-size: 20px;
 }
 
 .journey-heading {
@@ -86,10 +90,14 @@
   transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
 }
 
-.journey-link--primary {
+.journey-link--primary  {
   background-color: #1d4ed8;
   color: #ffffff;
+  text-decoration: none;
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+.journey-link--primary span {
+  text-decoration: none;
 }
 
 .journey-link--primary:hover {
@@ -101,6 +109,9 @@
 .journey-link--secondary {
   background-color: #e5edff;
   color: #1d4ed8;
+}
+.journey-link--secondary span {
+text-decoration: none;
 }
 
 .journey-link--secondary:hover {
