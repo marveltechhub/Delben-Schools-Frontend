@@ -336,7 +336,13 @@ summary::before {
   z-index: 1500;
 
   display: none;
+
 }
+.dropdown-menu-discover{
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 .nav-item.dropdown.open .dropdown-menu-discover,
 .nav-item.dropdown:hover .dropdown-menu-discover {
   display: block;

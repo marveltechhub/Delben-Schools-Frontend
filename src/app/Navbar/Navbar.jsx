@@ -381,10 +381,9 @@ export default function Navbar() {
 
           <details>
             <summary>Discover<Image src="/arrow.png" alt="▼" width={12} height={12} /></summary>
-            {/* <Link href="/discover/about" onClick={() => setMenuOpen(false)}>About Delben</Link>
+            <Link href="/discover/about" onClick={() => setMenuOpen(false)}>About Delben</Link>
             <Link href="/discover/team" onClick={() => setMenuOpen(false)}>Our Team</Link>
-            <Link href="/discover/testimonials" onClick={() => setMenuOpen(false)}>Testimonials</Link> */}
-            <Discover />  
+            <Link href="/discover/testimonials" onClick={() => setMenuOpen(false)}>Testimonials</Link>
           </details>
 
           <details>
