@@ -1,243 +1,309 @@
+/* Calendar/Leadership Section - Modern 21st Century Design */
 .leadership-section {
+  padding: 120px 20px;
+  background: var(--gray-50);
   position: relative;
-  padding: 70px 16px;
-  background-image: linear-gradient(to bottom, rgba(15,23,42,0.75), rgba(15,23,42,0.85)), url("/play.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  color: #f9fbff;
-}
-
-.leadership-overlay {
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.leadership-inner {
-  text-align: center;
-}
-
-.leadership-title {
-  font-size: clamp(30px, 4vw, 40px);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.leadership-subtitle {
-  max-width: 720px;
-  margin: 0 auto 30px;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #e2ecff;
-}
-
-.leadership-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.leadership-card {
-  position: relative;
-  padding: 20px 18px 22px;
-  border-radius: 16px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 10px 26px rgba(15,23,42,0.35);
-  color: #0f172a;
-  background: #f9fafb;
   overflow: hidden;
 }
 
-.leadership-card--one {
-  background: #D8CDCB;
-}
-.leadership-card-title--two {
-  color: #FFFFFF;
-  padding: 0 10px;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.leadership-card--two {
-  background: linear-gradient(180deg, #C10C79, #A80E86);
-  color: #FFFFFF;
-  border-radius: 10px;
-  padding: 30px 20px 30px;
-  transition: background 0.22s ease, transform 0.16s ease, box-shadow 0.16s ease; 
-}
-.leadership-card--two .leadership-card-text {
-  color: #f9fafb;
-  padding: 0 10px;
-  font-size: 20px;
-  padding-top: 10px;
-  line-height: 1.7;
-}
-
-.leadership-card--two:hover {
-  background: linear-gradient(145deg, #22c55e, #16a34a);
-  color: #ecfdf5;
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(6,95,70,0.55);
-}
-
-.leadership-card--two:hover .leadership-card-title {
-  color: #ecfdf5;
-}
-
-.leadership-card--two:hover .leadership-card-text {
-  color: #dcfce7;
-}
-
-.leadership-card--three {
-background: #D8CDCB;
-}
-
-.leadership-icon-wrap {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 8px; /* center icon circle in card */
-  background: rgba(15,23,42,0.06);
-}
-.leadership-icon-wrap--one{
-  background: #C8C6D4;
-}
-.leadership-card--one .leadership-icon-wrap {
-  background: rgba(37,99,235,0.15);
-}
-
-.leadership-card--two .leadership-icon-wrap {
-  background: rgba(22,163,74,0.18);
-}
-
-.leadership-card--three .leadership-icon-wrap {
-  background: rgba(220,38,38,0.18);
-}
-
-.leadership-icon {
-  width: 22px;
-  height: 22px;
-  color: #0f172a;
-}
-
-.leadership-card-title {
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-  color: #DC3835;
-  padding: 10px 0;
-}
-
-.leadership-card-text {
-  font-size: 20px;
-  line-height: 1.7;
-  text-align: center;
-  color: #2E2E2E;
-  max-width: 100%;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.calendar-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.water-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  border: none;
-  background-color: #2563eb;
-  color: #f9fafb;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
-  transition: background-color 0.2s ease, transform 0.14s ease, box-shadow 0.18s ease;
-}
-
-.water-btn-label {
-  position: relative;
-  text-decoration: none;
-  z-index: 2;
-}
-
-.water-btn-water {
+.leadership-section::before {
+  content: '';
   position: absolute;
-  inset: -30%;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.55), transparent 60%);
-  opacity: 0.85;
-  transform: translateY(-110%);
-  pointer-events: none;
+  inset: 0;
+  background: var(--gradient-mesh);
+  opacity: 0.5;
+}
+
+.leadership-background {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+}
+
+.leadership-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
   z-index: 1;
 }
 
-.water-btn:hover,
-.water-btn:focus-visible {
-  background-color: #1d4ed8;
-  transform: translateY(-1px);
-  box-shadow: 0 16px 32px rgba(30, 64, 175, 0.65);
+/* Header */
+.leadership-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.water-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 10px 20px rgba(30, 64, 175, 0.55);
+.leadership-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
 }
 
-.water-btn:hover .water-btn-water,
-.water-btn:focus-visible .water-btn-water,
-.water-btn:active .water-btn-water {
-  animation: water-swipe 0.85s ease-out forwards;
+.leadership-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 
-@keyframes water-swipe {
-  0% {
-    transform: translateY(-110%);
-    opacity: 0.9;
+.leadership-subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--gray-600);
+}
+
+/* Feature Cards Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.leadership-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.leadership-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.leadership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+/* Card color variations */
+.leadership-card--blue::before {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.leadership-card--purple::before {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.leadership-card--green::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+/* Card Icon */
+.card-icon-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.leadership-card--blue .card-icon-wrap {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+  color: #3b82f6;
+}
+
+.leadership-card--purple .card-icon-wrap {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
+  color: #8b5cf6;
+}
+
+.leadership-card--green .card-icon-wrap {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+  color: #10b981;
+}
+
+.leadership-card:hover .card-icon-wrap {
+  transform: scale(1.1);
+}
+
+/* Card Content */
+.card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.card-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.1;
+  transition: all 0.4s ease;
+}
+
+.leadership-card--blue .card-decoration {
+  background: #3b82f6;
+}
+
+.leadership-card--purple .card-decoration {
+  background: #8b5cf6;
+}
+
+.leadership-card--green .card-decoration {
+  background: #10b981;
+}
+
+.leadership-card:hover .card-decoration {
+  transform: scale(1.2);
+  opacity: 0.15;
+}
+
+/* Stats */
+.leadership-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 36px 48px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 50px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100);
+  border-radius: var(--radius-lg);
+  color: var(--primary);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gray-900);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+/* CTA */
+.leadership-cta {
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  60% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(110%);
-    opacity: 0;
+  
+  .leadership-stats {
+    gap: 40px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .leadership-section {
-    padding: 50px 14px;
+    padding: 80px 16px;
   }
-
+  
   .leadership-grid {
     grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-inline: auto;
+    gap: 20px;
   }
-
-  .leadership-inner {
-    text-align: center;
+  
+  .leadership-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 28px;
   }
+  
+  .leadership-subtitle {
+    font-size: 16px;
+  }
+}
 
+@media (max-width: 480px) {
+  .leadership-title {
+    font-size: 2rem;
+  }
+  
   .leadership-card {
-    text-align: left;
+    padding: 28px 20px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -3,199 +3,129 @@ import React, { useEffect, useState } from "react";
 import "./testimonials.css";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-const newsSlides = [
-{
-id: 1,
-image: "/about.png",
-title: "A heartfelt message of appreciation",
-text: "A heartfelt message of appreciation from the Education Secretary to all DLHS Alumni.",
-},
-{
-id: 2,
-image: "/graduate.png.webp",
-title: "First class honours spotlight",
-text: "Meet some DLHS Alumni who graduated with first class honours in their various fields.",
-},
-{
-id: 3,
-image: "/upcoming.png.webp",
-title: "DLHS Empowerment & Networking",
-text: "DLHS Alumni Empowerment and Networking Session featuring on the ACTIVATE 9.0 programme.",
-},
-{
-id: 4,
-image: "/upcoming.png.webp",
-title: "DLHS Empowerment & Networking",
-text: "DLHS Alumni Empowerment and Networking Session featuring on the ACTIVATE 9.0 programme.",
-},
+
+const discoverCards = [
+  {
+    id: 1,
+    image: "/update.webp",
+    title: "About Our School",
+    description: "Delben Schools is a mission co-educational full boarding school committed to providing an all-round and qualitative education.",
+    link: "/our-school",
+    color: "blue",
+    icon: "🏫"
+  },
+  {
+    id: 2,
+    image: "/campuses.webp",
+    title: "Our Campuses",
+    description: "Explore our serene learning environment, modern classrooms, and facilities designed to support every learner.",
+    link: "/campuses",
+    color: "green",
+    icon: "🏟️"
+  },
+  {
+    id: 3,
+    image: "/projects.webp",
+    title: "Academic Programs",
+    description: "Discover our innovative curriculum and pioneering projects that set us apart in education excellence.",
+    link: "/academics",
+    color: "orange",
+    icon: "📚"
+  }
+];
+
+const stats = [
+  { number: "25+", label: "Years of Excellence", icon: "🏆" },
+  { number: "500+", label: "Students Enrolled", icon: "👥" },
+  { number: "50+", label: "Expert Teachers", icon: "👨‍🏫" },
+  { number: "100%", label: "Success Rate", icon: "🎯" }
 ];
 
 export default function Testimonials() {
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeCard, setActiveCard] = useState(0);
 
-const goToSlide = (index) => {
-const total = newsSlides.length;
-const next = (index + total) % total;
-setCurrentIndex(next);
-};
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % discoverCards.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-const handlePrev = () => {
-goToSlide(currentIndex - 1);
-};
-
-const handleNext = () => {
-goToSlide(currentIndex + 1);
-};
-
-useEffect(() => {
-const auto = setInterval(() => {
-setCurrentIndex((prev) => (prev + 1) % newsSlides.length);
-}, 6000);
-
-return () => clearInterval(auto);
-
-}, []);
-
-return (
-<>
-{/* Discover Section */} 
-<section className="discover-section"> <div className="discover-inner"> <h2 className="discover-heading">DISCOVER DELBEN</h2> <p className="discover-subtitle">
-Learn more about us, our campuses, pioneering projects, and innovative educational
-approaches. </p>
-
-      <div className="discover-grid">
-        <article className="discover-card discover-card--about">
-          <div className="discover-image-frame">
-            <div className="discover-image">
-              <Image
-                src="/update.webp"
-                alt="Students and staff at Delben High Schools"
-                width={480}
-                height={320}
-              />
-            </div>
-          </div>
-
-          <h3 className="discover-card-title">Get to Know us</h3>
-          <p className="discover-card-text">
-            DLHS is a mission co-educational full boarding school committed to providing an
-            all-round and qualitative education…
+  return (
+    <section className="discover-section">
+      <div className="discover-container">
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-badge">Explore Delben</span>
+          <h2 className="section-title">Discover Our School</h2>
+          <p className="section-subtitle">
+            Learn more about us, our campuses, pioneering projects, and innovative educational approaches that shape future leaders.
           </p>
+        </div>
 
-          <Link href="/about" className="discover-button">
-            <span>Learn more</span>
-          </Link>
-        </article>
-
-        <article className="discover-card discover-card--campus">
-          <div className="discover-image-frame">
-            <div className="discover-image">
-              <Image
-                src="/campuses.webp"
-                alt="Delben High Schools campus and facilities"
-                width={480}
-                height={320}
-              />
+        {/* Stats Bar */}
+        <div className="stats-bar">
+          {stats.map((stat, index) => (
+            <div key={index} className="stat-item">
+              <span className="stat-icon">{stat.icon}</span>
+              <div className="stat-content">
+                <span className="stat-number">{stat.number}</span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
             </div>
+          ))}
+        </div>
+
+        {/* Cards Grid */}
+        <div className="discover-grid">
+          {discoverCards.map((card, index) => (
+            <article 
+              key={card.id} 
+              className={`discover-card discover-card--${card.color}`}
+            >
+              <div className="card-image-wrapper">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={480}
+                  height={320}
+                  className="card-image"
+                />
+                <div className="card-overlay">
+                  <span className="card-icon">{card.icon}</span>
+                </div>
+              </div>
+              
+              <div className="card-content">
+                <h3 className="card-title">{card.title}</h3>
+                <p className="card-description">{card.description}</p>
+                <Link href={card.link} className="card-link">
+                  <span>Learn More</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="discover-cta">
+          <div className="cta-content">
+            <h3>Ready to Join Our Community?</h3>
+            <p>Take the first step towards your child's bright future</p>
           </div>
-
-          <h3 className="discover-card-title">Our Campuses</h3>
-          <p className="discover-card-text">
-            Explore our serene learning environment, modern classrooms, and facilities designed
-            to support every learner.
-          </p>
-
-          <Link href="/campuses" className="discover-button discover-button--arrow">
-            <span>Tour our school</span>
-            <span className="discover-button-arrow">→</span>
-          </Link>
-        </article>
-
-        <article className="discover-card discover-card--projects">
-          <div className="discover-image-frame">
-            <div className="discover-image">
-              <Image
-                src="/about.png"
-                alt="Students working on school projects"
-                width={480}
-                height={320}
-              />
-            </div>
+          <div className="cta-buttons">
+            <Link href="/admission" className="btn btn-accent">
+              Apply Now
+            </Link>
+            <Link href="/contact" className="btn btn-outline">
+              Contact Us
+            </Link>
           </div>
-
-          <h3 className="discover-card-title">Our Projects</h3>
-          <p className="discover-card-text">
-            Discover pioneering projects and initiatives that inspire creativity, leadership,
-            and real-world problem solving.
-          </p>
-
-          <Link href="/projects" className="discover-button discover-button--arrow">
-            <span>View our projects</span>
-            <span className="discover-button-arrow">→</span>
-          </Link>
-        </article>
+        </div>
       </div>
-    </div>
-  </section>
-
-  {/* News Slider */}
-  {/* News Slider */}
-<section className="news-section">
-  <div className="news-inner">
-    <div className="news-header">
-      <h2 className="news-title">DLHS News & Updates</h2>
-
-      <Link href="/news" className="news-view-more">
-        <span>View More</span>
-        <span className="news-view-more-arrow">→</span>
-      </Link>
-    </div>
-
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={20}
-      centeredSlides={true}
-      loop={true}
-      autoplay={{ delay: 5000 }}
-      navigation
-      pagination={{ clickable: true }}
-      breakpoints={{
-        0: {
-          slidesPerView: 1.2,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      }}
-      className="news-swiper"
-    >
-      {newsSlides.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <article className="news-card">
-            <div className="news-image">
-              <img src={slide.image} alt={slide.title} />
-            </div>
-
-            <div className="news-body">
-              <h3 className="news-card-title">{slide.title}</h3>
-              <p className="news-card-text">{slide.text}</p>
-            </div>
-          </article>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-</section>
-</>
-
-
-);
+    </section>
+  );
 }
